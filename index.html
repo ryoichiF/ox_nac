@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
+    <title>涼一録</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My GitHub Pages Site</h1>
+        <h1>涼一録</h1>
     </header>
     <main>
-        <p>This is my first GitHub Pages site.</p>
+        <section id="entry-form">
+            <h2>日記を書く</h2>
+            <form id="diaryForm">
+                <label for="entryTitle">タイトル:</label>
+                <input type="text" id="entryTitle" name="entryTitle" required><br><br>
+                <label for="entryContent">内容:</label>
+                <textarea id="entryContent" name="entryContent" rows="5" required></textarea><br><br>
+                <button type="submit">投稿</button>
+            </form>
+        </section>
+        <section id="diary-entries">
+            <h2>日記一覧</h2>
+            <div id="entriesContainer"></div>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2024 My GitHub Pages Site</p>
+        <p>&copy; 2024 涼一録</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
