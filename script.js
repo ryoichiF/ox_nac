@@ -1,22 +1,36 @@
-document.getElementById('diaryForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const title = document.getElementById('entryTitle').value;
-    const content = document.getElementById('entryContent').value;
-    const entriesContainer = document.getElementById('entriesContainer');
+document.addEventListener('DOMContentLoaded', function() {
+    const entriesContainer = document.getElementById('diary-entries');
 
-    const entryDiv = document.createElement('div');
-    entryDiv.classList.add('entry');
+    // 例の日記エントリ
+    const entries = [
+        {
+            title: "日記のタイトル1",
+            content: "これは日記の内容1です。",
+            date: "2024-06-28"
+        },
+        {
+            title: "日記のタイトル2",
+            content: "これは日記の内容2です。",
+            date: "2024-06-27"
+        }
+    ];
 
-    const entryTitle = document.createElement('h3');
-    entryTitle.textContent = title;
-    entryDiv.appendChild(entryTitle);
+    entries.forEach(entry => {
+        const entryDiv = document.createElement('div');
+        entryDiv.classList.add('entry');
 
-    const entryContent = document.createElement('p');
-    entryContent.textContent = content;
-    entryDiv.appendChild(entryContent);
+        const entryTitle = document.createElement('h3');
+        entryTitle.textContent = entry.title;
+        entryDiv.appendChild(entryTitle);
 
-    entriesContainer.prepend(entryDiv);
+        const entryDate = document.createElement('p');
+        entryDate.textContent = entry.date;
+        entryDiv.appendChild(entryDate);
 
-    document.getElementById('diaryForm').reset();
+        const entryContent = document.createElement('p');
+        entryContent.textContent = entry.content;
+        entryDiv.appendChild(entryContent);
+
+        entriesContainer.appendChild(entryDiv);
+    });
 });
