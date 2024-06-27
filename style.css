@@ -12,38 +12,38 @@ header {
     text-align: center;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
 main {
     padding: 20px;
 }
 
-#entry-form {
-    margin-bottom: 30px;
-}
-
-#entry-form input, #entry-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#entry-form button {
+footer {
     background-color: #333;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
-#entry-form button:hover {
-    background-color: #555;
-}
-
-#diary-entries {
-    margin-top: 20px;
+section {
+    margin-bottom: 20px;
 }
 
 .entry {
