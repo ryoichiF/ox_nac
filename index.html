@@ -9,21 +9,22 @@
 <body>
     <header>
         <h1>涼一録</h1>
+        <nav>
+            <ul>
+                <li><a href="about.html">アバウト</a></li>
+                <li><a href="books.html">本</a></li>
+                <li><a href="short-stories.html">短編・掌編</a></li>
+                <li><a href="essays.html">エッセイ</a></li>
+                <li><a href="interviews.html">対談・インタビュー</a></li>
+                <li><a href="diary.html">ニッキ</a></li>
+                <li><a href="https://twitter.com/your_twitter">Twitter</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section id="entry-form">
-            <h2>日記を書く</h2>
-            <form id="diaryForm">
-                <label for="entryTitle">タイトル:</label>
-                <input type="text" id="entryTitle" name="entryTitle" required><br><br>
-                <label for="entryContent">内容:</label>
-                <textarea id="entryContent" name="entryContent" rows="5" required></textarea><br><br>
-                <button type="submit">投稿</button>
-            </form>
-        </section>
-        <section id="diary-entries">
-            <h2>日記一覧</h2>
-            <div id="entriesContainer"></div>
+        <section>
+            <h2>最新の日記</h2>
+            <div id="diary-entries"></div>
         </section>
     </main>
     <footer>
