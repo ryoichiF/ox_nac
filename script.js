@@ -1,36 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const entriesContainer = document.getElementById('diary-entries');
-
-    // 例の日記エントリ
-    const entries = [
-        {
-            title: "日記のタイトル1",
-            content: "これは日記の内容1です。",
-            date: "2024-06-28"
-        },
-        {
-            title: "日記のタイトル2",
-            content: "これは日記の内容2です。",
-            date: "2024-06-27"
+$(function() {
+    var pageTop = $('#pagetop');
+    pageTop.hide();
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            pageTop.fadeIn();
+        } else {
+            pageTop.fadeOut();
         }
-    ];
+    });
+    pageTop.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 1000);
+        return false;
+    });
+});
 
-    entries.forEach(entry => {
-        const entryDiv = document.createElement('div');
-        entryDiv.classList.add('entry');
+$(function(){
+    $('a[href^=#]').click(function() {
+        var href= $(this).attr("href");
 
-        const entryTitle = document.createElement('h3');
-        entryTitle.textContent = entry.title;
-        entryDiv.appendChild(entryTitle);
-
-        const entryDate = document.createElement('p');
-        entryDate.textContent = entry.date;
-        entryDiv.appendChild(entryDate);
-
-        const entryContent = document.createElement('p');
-        entryContent.textContent = entry.content;
-        entryDiv.appendChild(entryContent);
-
-        entriesContainer.appendChild(entryDiv);
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var speed = 1000;//sokudo
+        var position = target.offset().top;
+        $('body,html').animate({scrollTop:position}, speed, 'swing');
+        return false;
     });
 });
